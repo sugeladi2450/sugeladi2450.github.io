@@ -20,15 +20,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: yarn
+          # 这里去掉了 cache: yarn，防止因为找不到文件而报错
+
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        # 改用 npm install，它不需要锁定文件也能运行，非常“抗造”
+        run: npm install
+
       - name: Build website
-        run: yarn build
+        run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
