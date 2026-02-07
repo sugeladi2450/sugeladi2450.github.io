@@ -24,11 +24,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          # 这里去掉了 cache: yarn，防止因为找不到文件而报错
+          node-version: 20  
 
       - name: Install dependencies
-        # 改用 npm install，它不需要锁定文件也能运行，非常“抗造”
         run: npm install
 
       - name: Build website
