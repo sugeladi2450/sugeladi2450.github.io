@@ -68,7 +68,6 @@ const config = {
             position: 'left',
             label: '课程笔记',
           },
-          // 🔴 关键修改：我把“个人随笔/技术博客”那个按钮删掉了
           {
             href: 'https://github.com/sugeladi2450',
             label: 'GitHub',
