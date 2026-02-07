@@ -40,7 +40,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/sugeladi2450/sugeladi2450.github.io/edit/main/',
         },
         // 🟢 博客配置：恢复正常功能
         blog: {
@@ -50,7 +50,7 @@ const config = {
             xslt: true,
           },
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/sugeladi2450/sugeladi2450.github.io/edit/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
