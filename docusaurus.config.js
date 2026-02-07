@@ -22,9 +22,11 @@ const config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
+  // 链接检查配置
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  // 🟢 语言配置：统一为 'en' 防止构建报错
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -40,11 +42,19 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        
-        // 🔴 关键修改：直接把 blog 设为 false，彻底关闭博客功能！
-        // 这样无论你 blog 文件夹里有什么烂摊子，网站都不会再看一眼，也不会报错。
-        blog: false, 
-
+        // 🟢 博客配置：恢复正常功能
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -68,6 +78,8 @@ const config = {
             position: 'left',
             label: '课程笔记',
           },
+          // 🟢 导航栏：加回“技术博客”按钮
+          {to: '/blog', label: '技术博客', position: 'left'},
           {
             href: 'https://github.com/sugeladi2450',
             label: 'GitHub',
@@ -78,6 +90,7 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          // 这里的 Docs 栏目已删除，防止死链报错
           {
             title: 'Community',
             items: [
