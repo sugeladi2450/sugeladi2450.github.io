@@ -1,12 +1,8 @@
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -14,27 +10,27 @@ const config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  // Future flags
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://sugeladi2450.github.io', // 你的网址
+  // 网站基础配置
+  url: 'https://sugeladi2450.github.io',
   baseUrl: '/',
-  organizationName: 'sugeladi2450', // 你的 GitHub 用户名
-  projectName: 'sugeladi2450.github.io', // 你的仓库名
+  organizationName: 'sugeladi2450', 
+  projectName: 'sugeladi2450.github.io', 
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // 🟢 关键修复：加回 i18n 配置，并统一设为 'en'
+  // 这能解决 "Unable to build website for locale en" 的报错
   i18n: {
     defaultLocale: 'en',
-    locales: ['en-US'],
+    locales: ['en'],
   },
 
   presets: [
@@ -44,8 +40,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -55,11 +49,8 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -74,32 +65,31 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
       navbar: {
-  title: 'Sugeladi的空间', // 左上角标题
-  items: [
-    {
-      type: 'docSidebar',
-      sidebarId: 'tutorialSidebar',
-      position: 'left',
-      label: '课程笔记', // 这里对应 docs 文件夹
-    },
-    {to: '/blog', label: '个人随笔', position: 'left'}, // 这里对应 blog 文件夹
-    {
-      href: 'https://github.com/sugeladi2450',
-      label: 'GitHub',
-      position: 'right',
-    },
-  ],
-},
+        title: 'Sugeladi的空间',
+        items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: '课程笔记',
+          },
+          {to: '/blog', label: '个人随笔', position: 'left'},
+          {
+            href: 'https://github.com/sugeladi2450',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
       footer: {
         style: 'dark',
         links: [
-          
+          // Docs 栏目已删除，防止死链报错
           {
             title: 'Community',
             items: [
@@ -127,7 +117,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Sugeladi2450. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
