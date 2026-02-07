@@ -1,7 +1,7 @@
 ﻿---
 slug: welcome
 title: 博客建设中
-authors: [sugeladi2450]
 tags: [公告]
 date: 2026-02-07
 ---
+
