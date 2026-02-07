@@ -78,7 +78,7 @@ const config = {
             position: 'left',
             label: '课程笔记',
           },
-          {to: '/blog', label: '个人随笔', position: 'left'},
+          {to: '/blog', label: '技术博客', position: 'left'},
           {
             href: 'https://github.com/sugeladi2450',
             label: 'GitHub',
