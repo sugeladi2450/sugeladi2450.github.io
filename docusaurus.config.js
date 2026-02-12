@@ -1,3 +1,4 @@
+// docusaurus.config.js
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 
@@ -103,7 +104,7 @@ const config = {
               // 防止因为找不到 intro 而报错
               {
                 label: '课程笔记',
-                to: '/docs', 
+                to: '/blog', 
               },
             ],
           },
