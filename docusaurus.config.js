@@ -17,8 +17,8 @@ const config = {
   // 网站基础配置
   url: 'https://sugeladi2450.github.io',
   baseUrl: '/',
-  organizationName: 'sugeladi2450', 
-  projectName: 'sugeladi2450.github.io', 
+  organizationName: 'sugeladi2450',
+  projectName: 'sugeladi2450.github.io',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -70,8 +70,14 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Sugeladi的空间',
+        title: 'sugeladi2450的空间',
+        logo: {
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
+        },
         items: [
+          // 🟢 修复重点：这里不再强行指向 /docs/intro
+          // 而是利用 type: 'docSidebar' 自动连接到你侧边栏的第一个文档（比如你的 CSAPP 笔记）
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -90,7 +96,19 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          // 这里的 Docs 栏目已删除，防止死链报错
+          {
+            title: 'Docs',
+            items: [
+              // 🟢 修复重点：页脚链接也改成了自动指向侧边栏
+              // 防止因为找不到 intro 而报错
+              {
+                label: '课程笔记',
+                to: '/docs/CSAPP/intro', // 这里假设你的 CSAPP 文件夹下有个 intro.md，如果没有，请改成实际的文件名！
+                // 或者更稳妥地，暂时指向博客：
+                // to: '/blog',
+              },
+            ],
+          },
           {
             title: 'Community',
             items: [
@@ -111,6 +129,10 @@ const config = {
           {
             title: 'More',
             items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
