@@ -103,9 +103,7 @@ const config = {
               // 防止因为找不到 intro 而报错
               {
                 label: '课程笔记',
-                to: '/docs/CSAPP/intro', // 这里假设你的 CSAPP 文件夹下有个 intro.md，如果没有，请改成实际的文件名！
-                // 或者更稳妥地，暂时指向博客：
-                // to: '/blog',
+                to: '/docs', 
               },
             ],
           },
